@@ -30,51 +30,41 @@ namespace LAB03
             if (denominator == 0)
                 throw new ArgumentException("Знаменатель не может быть равен 0");
 
-            /*
-                TODO: Реализовать логику внутри конструктора
-                числитель = аргументу функции (numerator), 
-                знаменатель = аргументу функции (denominator)
-
-                Сократить дробь в момент создания (вызвать Reduce())
-                Нормализовать знаки (вызвать Normalize())
-            */
+            this.numerator = numerator;
+            this.denominator = denominator;
+            Reduce();
+            Normalize();
         }
 
         public Rational(int numerator)
         {
-            /*
-                TODO: Реализовать логику внутри конструктора
-                числитель = аргументу функции, знаменатель = 1
-            */
+            this.numerator = numerator;
+            this.denominator = 1;
         }
 
         public Rational()
         {
-            /*
-                TODO: Реализовать логику внутри конструктора
-                числитель = 0, знаменатель = 1
-            */
+            this.numerator = 0;
+            this.denominator = 1;
         }
 
         // ToString
         public override string ToString()
         {
-            /*
-                TODO: Реализовать логику метода для вывода объектов дроби
-                В виде numerator / denominator
-                Если знаменатель равен 1 - выводить только числитель
-            */
-            return "";
+            if (denominator == 1)
+                return numerator.ToString();
+            return $"{numerator} / {denominator}";
         }
 
         // Метод нормализации знака дроби
         private void Normalize()
         {
-            /*
-                TODO: Реализовать логику метода нирмализации знака
-                Если знаменатель дроби < 0
-                Домнажаем числитель и знаменатель на -1
-            */
+            // Если минус внизу (1/-2) его наверх (-1/2)
+            if (denominator < 0)
+            {
+                numerator *= -1;
+                denominator *= -1;
+            }
         }
 
         // НОД (алгоритм Евклида). Нужен для сокращения дроби
@@ -117,16 +107,13 @@ namespace LAB03
 
         public static Rational operator -(Rational a, Rational b)
         {
-            // TODO: Реализовать перегрузку оператора - по примеру + (описан выше)
-            return new Rational();
+            // Формула разности: (a.n * b.d - b.n * a.d) / (a.d * b.d)
+            return new Rational(a.numerator * b.denominator - b.numerator * a.denominator,a.denominator * b.denominator);
         }
 
         public static Rational operator *(Rational a, Rational b)
         {
-            return new Rational(
-                a.numerator * b.numerator,
-                a.denominator * b.denominator
-            );
+            return new Rational(a.numerator * b.numerator, a.denominator * b.denominator);
         }
 
         public static Rational operator /(Rational a, Rational b)
@@ -134,22 +121,16 @@ namespace LAB03
             if (b.numerator == 0)
                 throw new DivideByZeroException("Деление на ноль");
 
-            // TODO: Реализовать перегрузку оператора / по примеру * (описан выше)
-            return new Rational();
+            // При делении переворачиваем вторую дробь (умножаем на обратную)
+            return new Rational(a.numerator * b.denominator, a.denominator * b.numerator);
         }
 
         // Сравнение
 
         public static bool operator ==(Rational a, Rational b)
         {
-            /* 
-                TODO: Реализовать перегрузку оператора =
-                Дробь a = Дроби b, 
-                если числители и знаменатели обеих дробей равны между собой
-            */
-            return true;
+            return a.numerator == b.numerator && a.denominator == b.denominator;
         }
-
         public static bool operator !=(Rational a, Rational b)
         {
             return !(a == b);
