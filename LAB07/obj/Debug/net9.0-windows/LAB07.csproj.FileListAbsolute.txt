@@ -1,0 +1,17 @@
+D:\VT_LABS\LAB07\bin\Debug\net9.0-windows\LAB07.exe
+D:\VT_LABS\LAB07\bin\Debug\net9.0-windows\LAB07.deps.json
+D:\VT_LABS\LAB07\bin\Debug\net9.0-windows\LAB07.runtimeconfig.json
+D:\VT_LABS\LAB07\bin\Debug\net9.0-windows\LAB07.dll
+D:\VT_LABS\LAB07\bin\Debug\net9.0-windows\LAB07.pdb
+D:\VT_LABS\LAB07\obj\Debug\net9.0-windows\LAB07.Form1.resources
+D:\VT_LABS\LAB07\obj\Debug\net9.0-windows\LAB07.csproj.GenerateResource.cache
+D:\VT_LABS\LAB07\obj\Debug\net9.0-windows\LAB07.GeneratedMSBuildEditorConfig.editorconfig
+D:\VT_LABS\LAB07\obj\Debug\net9.0-windows\LAB07.AssemblyInfoInputs.cache
+D:\VT_LABS\LAB07\obj\Debug\net9.0-windows\LAB07.AssemblyInfo.cs
+D:\VT_LABS\LAB07\obj\Debug\net9.0-windows\LAB07.csproj.CoreCompileInputs.cache
+D:\VT_LABS\LAB07\obj\Debug\net9.0-windows\LAB07.sourcelink.json
+D:\VT_LABS\LAB07\obj\Debug\net9.0-windows\LAB07.dll
+D:\VT_LABS\LAB07\obj\Debug\net9.0-windows\refint\LAB07.dll
+D:\VT_LABS\LAB07\obj\Debug\net9.0-windows\LAB07.pdb
+D:\VT_LABS\LAB07\obj\Debug\net9.0-windows\LAB07.genruntimeconfig.cache
+D:\VT_LABS\LAB07\obj\Debug\net9.0-windows\ref\LAB07.dll
